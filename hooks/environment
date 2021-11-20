@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+HOOKS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+echo "--- Adding the following binaries / scripts to the PATH"
+for bin in "${HOOKS_DIR}"/../bin/*; do
+    basename "${bin}"
+done
+
+export PATH="$PATH:$HOOKS_DIR/../bin"
