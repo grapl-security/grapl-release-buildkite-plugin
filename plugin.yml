@@ -1,0 +1,10 @@
+---
+name: grapl-release
+description: Grapl release / tagging logic
+author: https://github.com/grapl-security
+requirements:
+  - bash
+  - git
+configuration:
+  properties: {}
+  additionalProperties: false
