@@ -1,5 +1,1 @@
-shell_sources(
-    sources=[
-        "environment"
-    ]
-)
+shell_sources(sources=["environment"])
