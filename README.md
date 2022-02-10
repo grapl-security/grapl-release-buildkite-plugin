@@ -28,7 +28,7 @@ steps:
     command:
       - record_successsful_pipeline_run.sh
     plugins:
-      - grapl-security/grapl-release#v0.1.0
+      - grapl-security/grapl-release#v0.1.1
 ```
 
 ### Diff-based Logic
@@ -47,7 +47,7 @@ use it:
 steps:
   - label: ":thinking_face: Build containers?"
     plugins:
-      - grapl-security/grapl-release#v0.1.0 # <-- Must come first!
+      - grapl-security/grapl-release#v0.1.1 # <-- Must come first!
       - chronotc/monorepo-diff#v2.0.4:
           diff: grapl_diff.sh # <-- Comes from this plugin
           watch:
