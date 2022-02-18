@@ -7,11 +7,11 @@ steps:
   - label: ":lint-roller::bash: Lint Shell"
     command:
       - make lint-shell
-    # plugins:
-    #   - grapl-security/vault-login#v0.1.2
-    #   - grapl-security/vault-env#v0.1.0:
-    #       secrets:
-    #         - grapl-release-buildkite-plugin/TOOLCHAIN_AUTH_TOKEN
+    plugins:
+      - grapl-security/vault-login#v0.1.2
+      - grapl-security/vault-env#v0.1.0:
+          secrets:
+            - grapl-release-buildkite-plugin/TOOLCHAIN_AUTH_TOKEN
 
   - label: ":lint-roller::buildkite: Lint Plugin"
     command:
@@ -20,8 +20,8 @@ steps:
   - label: ":bash: Unit Test Shell"
     command:
       - make test-shell
-    # plugins:
-    #   - grapl-security/vault-login#v0.1.2
-    #   - grapl-security/vault-env#v0.1.0:
-    #       secrets:
-    #         - grapl-release-buildkite-plugin/TOOLCHAIN_AUTH_TOKEN
+    plugins:
+      - grapl-security/vault-login#v0.1.2
+      - grapl-security/vault-env#v0.1.0:
+          secrets:
+            - grapl-release-buildkite-plugin/TOOLCHAIN_AUTH_TOKEN
