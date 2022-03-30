@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 # shellcheck source-path=SCRIPTDIR
+source "$(dirname "${BASH_SOURCE[0]}")/log.sh"
+# shellcheck source-path=SCRIPTDIR
 source "$(dirname "${BASH_SOURCE[0]}")/util.sh"
 
 # Assuming our pipeline names are of the form of:
@@ -38,11 +40,11 @@ tag_last_success() {
     local -r tag="$(tag_for_pipeline "${pipeline}")"
 
     echo "--- :github: Re-tagging '${tag}'"
-    git tag "${tag}" --force
+    log_and_run git tag "${tag}" --force
 
     if is_real_run; then
         echo "--- :github: Pushing new value for '${tag}' tag"
-        git push origin "${tag}" --force --verbose
+        log_and_run git push origin "${tag}" --force --verbose
     else
         echo -e "--- :no_good: Would have pushed '${tag}' tag to Github"
     fi
