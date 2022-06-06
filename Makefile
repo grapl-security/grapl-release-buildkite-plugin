@@ -1,6 +1,5 @@
 COMPOSE_USER=$(shell id -u):$(shell id -g)
-
-RUN_CHECK := docker-compose run --rm --user=${COMPOSE_USER}
+RUN_CHECK := docker compose run --rm --user=$(COMPOSE_USER)
 
 .DEFAULT_GOAL=all
 
