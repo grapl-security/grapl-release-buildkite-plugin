@@ -21,7 +21,7 @@ lint: lint-shell lint-plugin
 
 .PHONY: lint-shell
 lint-shell:
-	./pants filter --target-type=shell_sources,shunit2_tests :: | xargs ./pants lint
+	./pants --filter-target-type=shell_source,shunit2_test lint ::
 
 .PHONY: lint-plugin
 lint-plugin:
